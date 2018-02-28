@@ -106,11 +106,12 @@ namespace Cierge
 
                 if (!Env.IsDevelopment())
                 {
-                    options.AddEphemeralSigningKey();
+                    options.AddSigningKey(SigningKey);                    
                 }
                 else
                 {
-                    options.AddSigningKey(SigningKey);
+                    options.AddEphemeralSigningKey();
+
                 }
                 options.UseJsonWebTokens();
             });
